@@ -1,0 +1,27 @@
+.circle {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 50%; /* the magic */
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 40px;
+}
+.blue {
+  background-color: #2E94C3;  
+}
+.green {
+  background-color: #23BC42;
+}
+.pink {
+  background-color: #F67171;
+}
+.feedback {
+  font-size: 14px;
+  color: #b1b1b1;
+}
