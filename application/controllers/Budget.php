@@ -44,5 +44,21 @@
 		{
 			$this->Budget_model->money_out_save();
 		}
+
+		public function fetch_money_in()
+		{
+			$id = $_SESSION['id'];
+			$data['money_in'] = $this->Budget_model->fetch_money_in_save($id);
+			echo json_encode($data);
+		}
+
+		public function fetch_money_spend()
+		{
+			$id = $_SESSION['id'];
+			$data['money_out'] = $this->Budget_model->fetch_money_out($id);
+			echo json_encode($data);
+		}
+
+
 	}
 ?>

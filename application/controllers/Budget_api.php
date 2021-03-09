@@ -7,6 +7,41 @@ class Budget_api extends CI_Controller {
  {
   $this->load->view('api_view');
  }
+
+	public function fetch_money_in()
+	{
+		$api_url = "http://localhost/finance_s/index.php/Budget/fetch_money_in";
+		$api_url = "https://xavishop.com/financial_app/index.php/Budget/fetch_money_in";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+	public function fetch_money_spend()
+	{
+		$api_url = "http://localhost/finance_s/index.php/Budget/fetch_money_spend";
+		$api_url = "https://xavishop.com/financial_app/index.php/Budget/fetch_money_spend";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
 /*Account verification start after signup*/ 
  function action()
  {
