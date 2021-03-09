@@ -7,7 +7,74 @@ class Financial_goals_end_url extends CI_Controller {
  {
   $this->load->view('api_view');
  }
-/*Account verification start after signup*/ 
+ /*fetch apis start*/
+	public function fetch_saving_plan()
+	{
+		$api_url = "http://localhost/finance_s/index.php/Financial_goal/fetch_saving_plan";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_house_plan()
+	{
+		$api_url = "http://localhost/finance_s/index.php/Financial_goal/fetch_house_plan";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_car_investment()
+	{
+		$api_url = "http://localhost/finance_s/index.php/Financial_goal/fetch_car_investment";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_investment_planner()
+	{
+		$api_url = "http://localhost/finance_s/index.php/Financial_goal/fetch_investment_planner";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+ /*fetch apis end*/
+/*Account verification start after signup*/
  function action()
  {
 

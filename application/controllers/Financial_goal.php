@@ -24,15 +24,8 @@ class Financial_goal extends CI_Controller
 		$this->load->view('financial_goal/saving_plan',$data);
 		$this->load->view('layout/footer');	
 	}
-	public function save_saving_plan()
-	{
-		$this->Financial_goals_model->save_saving_plan($id);
-	}
-	public function fetch_saving_plan()
-	{
-	  $id = 1;
-	  $data['record'] = $this->Financial_goals_model->fetch_record($id);	
-	}
+
+
 	public function house_plan()
 	{
 		$data['house_plan'] = $this->Financial_goals_model->fetch_house_plan();
@@ -88,5 +81,33 @@ class Financial_goal extends CI_Controller
 	{
 		$this->Financial_goals_model->update_investment_plan();
 	}
+	public function fetch_saving_plan()
+	{
+		$id = $_SESSION['id'];
+		$data['record'] = $this->Financial_goals_model->fetch_record($id);
+		echo json_encode($data);
+	}
+	public function fetch_house_plan()
+	{
+		$id = $_SESSION['id'];
+		$data['house_plan']= $this->Financial_goals_model->fetch_house_plan($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_car_investment()
+	{
+		$id = $_SESSION['id'];
+		$data['car_investment'] = $this->Financial_goals_model->fetch_car_investment($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_investment_planner()
+	{
+		$id = $_SESSION['id'];
+		$data['investment_planner'] = $this->Financial_goals_model->fetch_investment_planner($id);
+		echo json_encode($data);
+	}
+
+
+
 }
-?>
