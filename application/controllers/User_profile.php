@@ -352,5 +352,89 @@
 	);
 	$this->db->insert('fs_saving',$saving);
 	}
+/*apis*/
+	public function fetch_user_basic()
+	{
+		$id  =$_SESSION['id'];
+		$data['basic_details']=$this->Basic_profile_model->fetch_basic_profile($id);
+		echo json_encode($data);
+	}
 
+	public function fetch_financial_profile()
+	{
+		$id  =$_SESSION['id'];
+		$data['financial_profile']=$this->Basic_profile_model->fetch_financial_profile($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_account_payable()
+	{
+		$id  =$_SESSION['id'];
+		$data['account_payable']=$this->Basic_profile_model->fetch_account_payable($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_saving()
+	{
+		$id  =$_SESSION['id'];
+		$data['saving']=$this->Basic_profile_model->fetch_saving($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_auto_loan()
+	{
+		$id  =$_SESSION['id'];
+		$data['auto_loan']=$this->Basic_profile_model->fetch_auto_loan($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_credit_card()
+	{
+		$id  =$_SESSION['id'];
+		$data['credit_card']=$this->Basic_profile_model->fetch_credit_card($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_customer_loan()
+	{
+		$id  =$_SESSION['id'];
+		$data['customer_loan']=$this->Basic_profile_model->fetch_customer_loan($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_real_estate()
+	{
+		$id  =$_SESSION['id'];
+		$data['real_estate']=$this->Basic_profile_model->fetch_real_estate($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_student_loan()
+	{
+		$id  =$_SESSION['id'];
+		$data['student_loan']=$this->Basic_profile_model->fetch_student_loan($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_unpaid_tax()
+	{
+		$id  =$_SESSION['id'];
+		$data['unpaid_tax']=$this->Basic_profile_model->fetch_unpaid_tax($id);
+		echo json_encode($data);
+	}
+
+	public function fetch_others()
+	{
+		$id  =$_SESSION['id'];
+		$data['other']=$this->Basic_profile_model->fetch_others($id);
+		echo json_encode($data);
+	}
+
+	public function investment()
+	{
+		$id  =$_SESSION['id'];
+		$data['investment']=$this->Basic_profile_model->investment($id);
+		echo json_encode($data);
+	}
+/*apis end*/
 	}

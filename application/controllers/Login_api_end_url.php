@@ -43,7 +43,7 @@ class Login_api_end_url extends CI_Controller {
 /*Account verification start*/
    if($data_action == "Edit")
    {
-    $api_url = "http://localhost/finance_system/index.php/Login/verify_otp";
+    $api_url = "http://localhost/finance_s/index.php/Login/verify_otp";
 
     $form_data = array(
     $code =$this->input->post('code')

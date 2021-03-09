@@ -75,11 +75,12 @@
              return false;
             }
            }
-           public function fetch_basic_profile($user_id)
+           public function fetch_basic_profile()
            {
             $this->db->select('fs_basic_profile.id , fs_basic_profile.user_id, fs_basic_profile.first_name , fs_basic_profile.last_name , fs_basic_profile.dob,fs_basic_profile.adress,fs_basic_profile.country , fs_basic_profile.province,fs_basic_profile.city,fs_basic_profile.language,fs_basic_profile.gender,fs_basic_profile.image,fs_basic_profile.martial_status,fs_basic_profile.age');
-            $this->db->where('fs_basic_profile.user_id',$user_id);
+            $this->db->where('fs_basic_profile.user_id',$_SESSION['id']);
             $query =  $this->db->get("fs_basic_profile");
+            /*die($this->db->last_query());*/
             if ($query->num_rows()>0) 
             {
               return $query->row_array();
@@ -254,7 +255,7 @@
             $this->db->select('fs_investment.id,fs_investment.user_id,fs_investment.tax,fs_investment.currency,fs_investment.percentage,fs_investment.monthly_yearly');
             $this->db->where('fs_investment.user_id',$user_id);
             $query =  $this->db->get('fs_investment');
-             if ($query->num_rows()>0) 
+             if ($query->num_rows()>0)
               {
                 return $query->result();
               }
@@ -263,5 +264,7 @@
                 "No Record Available";
             }
            }
+
+
 
           }

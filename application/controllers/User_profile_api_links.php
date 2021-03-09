@@ -7,6 +7,204 @@ class User_profile_api_links extends CI_Controller {
  {
   $this->load->view('api_view');
  }
+
+		public function fetch_basic_record()
+		{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_user_basic";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+	public function fetch_financial_profiles()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_financial_profile";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+	public function fetch_account_payable()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_account_payable";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+	public function fetch_saving()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_saving";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_auto_loan()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_auto_loan";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_credit_card()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_credit_card";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+	public function customer_loan()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/customer_loan";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function real_estate()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_real_estate";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_student_loan()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_student_loan";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function fetch_unpaid_tax()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_unpaid_tax";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+	public function fetch_others()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/fetch_others";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+	public function investment()
+	{
+		$api_url = "http://localhost/finance_s/index.php/User_profile/investment";
+		$arr = array(
+			"login_user" => $this->session->userdata('id')
+		);
+		echo json_encode($arr);
+		$client = curl_init($api_url);
+		curl_setopt($client, CURLOPT_POST, true);
+		curl_setopt($client, CURLOPT_POSTFIELDS, $arr);
+		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($client);
+		curl_close($client);
+		echo $response;
+	}
+
+
+
 /*Account verification start after signup*/ 
  function action()
  {
@@ -78,56 +276,41 @@ if($data_action == "spouce")
     curl_close($client);
 
     echo $response;
-
-
    }
-/*financial_income*/
-/*if($data_action == "financial_income")
-   {
-    $api_url = "localhost/finance_system/index.php/User_profile/financial_income";
-    $api_url = "https://finance.xavishop.com/index.php/User_profile/financial_income";
-   $user_id =$this->input->post('user_id');
-        $tax = $this->input->post('tax');
-        $currency = $this->input->post('currency');
-        $per = $this->input->post('per');
-        $year_month=$this->input->post('monthly');
-        foreach ($user_id as $key=>$id) 
-            {
-                    $form_data = array(
-                        'user_id'=>$id,
-                        'tax'=>$tax[$key],
-                        'currency'=>$currency[$key],
-                        'percentage'=>$per[$key],
-                        'monthly_yearly'=>$year_month[$key],
-                        'created_by'=>$id,
-                        'created_at'=>date("Y-m-d H:i:s"),
-                    );
-                }       
-            }
-    $client = curl_init($api_url);
-
-    curl_setopt($client, CURLOPT_POST, true);
-
-    curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
-
-    curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
-
-    $response = curl_exec($client);
-
-    curl_close($client);
-
-    echo $response;*/
-   }
-/*financial_api_end*/
-/*investment_profile*/
 
 
 
+	 if($data_action == "spouce")
+	 {
+		 $api_url = "localhost/finance_system/index.php/User_model->get_user_details";
+		 $api_url = "https://finance.xavishop.com/index.php/User_profile/add_spouce";
 
-/*investment_profile_end*/
-   /*Debits API*/
+		 /*$api_url = "http://finance.xavishop.com/index.php/User/insert";*/
 
-// account payable
+		 /*financial income start*/
+		 $form_data = array(
+			 'user_id'     =>$this->input->post('id'),
+			 'marriage_date' =>$this->input->post('marriage_date'),
+			 'spouce_name'   =>$this->input->post('spouce_name'),
+			 'children_name' =>$this->input->post('children_name'),
+			 'dob'           =>$this->input->post('date_of_birth'),
+		 );
+
+		 $client = curl_init($api_url);
+
+		 curl_setopt($client, CURLOPT_POST, true);
+
+		 curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
+
+		 curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+
+		 $response = curl_exec($client);
+
+		 curl_close($client);
+
+		 echo $response;
+	 }
+
 if($data_action == "account_payable")
    {
     $api_url = "localhost/finance_system/index.php/User_profile/account_payable";
@@ -394,8 +577,8 @@ if($data_action == "account_payable")
    }
   }
 
- }
+
  
 }
 
-?>
+
